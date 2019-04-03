@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class lighton : MonoBehaviour
 {
-    // Start is called before the first frame update
-   
+    public GameObject obj1;
+    public GameObject obj2;
+    public float d;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.O))
+        d = Vector3.Distance(obj1.transform.position, obj2.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.O)&& d<20)
         {
-            this.GetComponent<Light>().enabled = true;
+            if( this.GetComponent<Light>().enabled) {
+                this.GetComponent<Light>().enabled = false;
+            }
+            else
+            {
+                this.GetComponent<Light>().enabled = true;
+            }
         }
-        if (Input.GetKey(KeyCode.F))
-        {
-            this.GetComponent<Light>().enabled = false;
-        }
+      
     }
 }
