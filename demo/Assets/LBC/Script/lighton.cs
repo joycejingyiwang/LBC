@@ -20,7 +20,7 @@ public class lighton : MonoBehaviour
         direction = obj1.transform.position - obj2.transform.position;
         angle = Vector3.Angle(origin, direction);
 
-        if (d < 20 && angle < 30)
+        if (d < 25 && angle < 15)
         {
            if (Input.GetMouseButtonDown(0))
                 {
